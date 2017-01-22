@@ -1,12 +1,13 @@
-% 課題５　判別分析法
-% 判別分析法を用いて画像二値化せよ．
-% 下記はサンプルプログラムである．
-% 課題作成にあたっては「Lenna」以外の画像を用いよ．
+課題５　判別分析法
+判別分析法を用いて画像二値化せよ．
+
 
 ORG=imread('cola.png'); % 原画像の入力
 ORG = rgb2gray(ORG); % カラー画像を白黒濃淡画像へ変換
 imagesc(ORG); colormap(gray); colorbar;
-pause;
+
+![原画像](https://github.com/Algo720/lecture_image_processing-_report/blob/master/image/kadai5_1.png?raw=true)  
+図1　白黒濃淡画像
 
 H = imhist(ORG); %ヒストグラムのデータを列ベクトルEに格納
 myu_T = mean(H);
@@ -31,4 +32,10 @@ end;
 
 IMG = ORG > max_thres;
 imagesc(IMG); colormap(gray); colorbar;
-pause;
+
+上記のプログラムで判別分析法を行う。
+![原画像](https://github.com/Algo720/lecture_image_processing-_report/blob/master/image/kadai5_2.png?raw=true)  
+図2　判別分析法後の白黒濃淡画像
+
+この判別分析法を用いた図2の画像と課題3の2階調画像を比べると、判別分析法を使った2階調画像のほうが、画像を認識しやすく
+表示されていることがわかった。
